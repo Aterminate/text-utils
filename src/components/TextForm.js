@@ -7,14 +7,17 @@ export const TextForm = (props) => {
         // console.log('Text On Change'+ text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert(" Converted to upper case ","success");
     }
     const handleLoClick = () =>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert(" Converted to lower case ","success");
     }
     const handleclearClick = () =>{
         let newText = '';
         setText(newText);
+        props.showAlert(" Text has cleared! ","success");
     }
     const handleOnChange  = (event) => {
         // console.log("On change");
@@ -28,11 +31,13 @@ export const TextForm = (props) => {
         // it is not necessary to add selection range
         // text.setSelectionRange(0, 9999);
         navigator.clipboard.writeText(text.value);
+        props.showAlert(" Copied to clipboard! ","success");
     }
     // Credits Coding wala
     const handleExtraSpaces  = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert(" Extra spaces has removed! ","success");
     }
 
 
