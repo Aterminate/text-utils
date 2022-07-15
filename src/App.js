@@ -6,11 +6,11 @@ import { About } from './components/About';
 import { Navbar } from './components/Navbar';
 import {TextForm} from  './components/TextForm';
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -42,24 +42,24 @@ function App() {
   }
   return (
       <>
-        <Router>
+        {/* <Router> */}
           <Navbar title="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
           <Alert alert={alert}/>
           <div className="container">
-          <Routes>
+          {/* <Routes>
               <Route
                   path="/"
                   element={
-                    <React.Fragment>
+                    <React.Fragment> */}
                       <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
-                    </React.Fragment>
+                    {/* </React.Fragment>
                   }
               />
               <Route
                 path="/About"
                 element={<About />}
               />
-          </Routes>
+          </Routes> */}
           {/* <Routes>
             <Route path="/about">
               <About/>
@@ -69,7 +69,7 @@ function App() {
             </Route>
           </Routes> */}
           </div>
-        </Router>
+        {/* </Router> */}
       </>
   );
 }
